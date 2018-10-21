@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peng.my_blog.mapper.ArticleMapper">
+
+
+    <select id="getArticleById" resultType="com.peng.my_blog.vo.DetailVO" parameterType="int">
+        SELECT article.id,title,publisher_id as `publisher.id`,nickname as `publisher.nickname`,article.description,
+        content,cover_img,article.create_time,look_num,article.update_time FROM article
+        LEFT JOIN user
+        ON article.publisher_id=user.id
+         WHERE article.id=#{articleId}
+    </select>
+</mapper>

@@ -1,0 +1,10 @@
+.modal-backdrop{
+    z-index: 10002!important;
+}
+.modal{
+    z-index: 10003!important;
+}
+.big_img{
+    text-align: center;
+    margin: 9.75rem auto!important;
+}
